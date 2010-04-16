@@ -1,0 +1,128 @@
+%\VignetteIndexEntry{keggorthology overview}
+%\VignetteDepends{hgu95av2.db, graph, RBGL, ALL}
+%\VignetteKeywords{Annotation, Pathways}
+%\VignettePackage{keggorthology}
+
+
+%
+% NOTE -- ONLY EDIT THE .Rnw FILE!!!  The .tex file is
+% likely to be overwritten.
+%
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage[authoryear,round]{natbib}
+\usepackage{hyperref}
+
+
+\textwidth=6.2in
+\textheight=8.5in
+%\parskip=.3cm
+\oddsidemargin=.1in
+\evensidemargin=.1in
+\headheight=-.3in
+
+\newcommand{\scscst}{\scriptscriptstyle}
+\newcommand{\scst}{\scriptstyle}
+
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+
+\textwidth=6.2in
+
+\bibliographystyle{plainnat} 
+ 
+\begin{document}
+%\setkeys{Gin}{width=0.55\textwidth}
+
+\title{\Rpackage{keggorthology}: the KEGG orthology as \Robject{graph}}
+\author{VJ Carey}% \verb+<stvjc@channing.harvard.edu>+}
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+
+KEGG is the Kyoto Encyclopedia of Genes and Genomes.
+An important product of the KEGG group is a catalog
+of pathways.  The KEGG Orthology (KO)
+organizes the pathways into a conceptual hierarchy.
+This package encodes the hierarchy as a graph, and
+provides some support for deriving sets of array
+feature identifiers from the hierarchy.
+
+\section{\Robject{KOgraph}}
+
+<<lkkog>>=
+library(keggorthology)
+library(graph)
+data(KOgraph)
+KOgraph
+nodes(KOgraph)[1:5]
+@
+The upper component of the hierarchy is:
+<<lkr>>=
+adj(KOgraph, nodes(KOgraph)[1])
+@
+
+Graph operations can be used to explore the
+orthology.  For example, the context of
+the PPAR signaling pathway is found
+as follows:
+<<lkpa>>=
+library(RBGL)
+sp.between(KOgraph, nodes(KOgraph)[1], "PPAR signaling pathway")
+@
+
+Fixed-length identifiers are used to label pathways.
+These are available as the 'tag' nodeData attribute.
+<<lkta>>=
+nodeData(KOgraph,,"tag")[1:5]
+@
+The depth of each term is also available.
+<<lkde>>=
+nodeData(KOgraph,,"depth")[1:5]
+@
+
+\section{Application to gene filtering}
+
+Several functions are available for retrieving
+relevant information from the orthology.
+If you know a substring of the pathway name of interest,
+you can obtain the numerical tag(s).
+<<lkd>>=
+getKOtags("insulin")
+@
+
+We can get probe set identifiers corresponding to
+a term.  The default chip annotation package used is hgu95av2.db.
+<<lkp>>=
+library(hgu95av2.db)
+mp = getKOprobes("Methionine")
+library(ALL)
+data(ALL)
+ALL[mp,]
+@
+
+\section{Infrastructure considerations}
+
+Based on keggorthology read of KEGG orthology, March 2 2010.
+Specifically, we run wget on
+\url{ftp://ftp.genome.jp/pub/kegg/brite/ko/ko00001.keg} and use
+parsing and modeling code given in inst/keggHTML to generate a data
+frame respecting the hierarchy, and then keggDF2graph function in
+keggorthology package to construct the graph.
+
+
+\section{Session info}
+
+<<lksi>>=
+sessionInfo()
+@
+
+
+\end{document}
