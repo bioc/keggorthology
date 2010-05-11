@@ -9,7 +9,7 @@ importMethodsFrom(graph, acc, addEdge, edgeMatrix, nodeData,
                   "nodeData<-", nodeDataDefaults, "nodeDataDefaults<-",
                   nodes, "nodes<-", numNodes, subGraph, union)
 
-importMethodsFrom(RSQLite, format)
+#importMethodsFrom(RSQLite, format)
 
 importFrom(grDevices, replayPlot)
 
