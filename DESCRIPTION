@@ -6,7 +6,7 @@ Description: graphical representation of the Feb 2010 KEGG Orthology.
   The KEGG orthology is a set of pathway IDs that are not to be
   confused with the KEGG ortholog IDs.
 Depends: R (>= 2.5.0),stats,graph,hgu95av2.db
-Imports: AnnotationDbi,graph,DBI, graph, grDevices, methods, RSQLite,
+Imports: AnnotationDbi,graph,DBI, graph, grDevices, methods,
          stats, tools, utils
 Suggests: RBGL,ALL
 Maintainer: VJ Carey <stvjc@channing.harvard.edu>
