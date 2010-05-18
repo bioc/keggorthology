@@ -1,4 +1,4 @@
- 
+
 
 
 importMethodsFrom(AnnotationDbi, colnames, get, mget, ncol, nrow)
@@ -8,8 +8,6 @@ importMethodsFrom(DBI, summary)
 importMethodsFrom(graph, acc, addEdge, edgeMatrix, nodeData,
                   "nodeData<-", nodeDataDefaults, "nodeDataDefaults<-",
                   nodes, "nodes<-", numNodes, subGraph, union)
-
-importMethodsFrom(RSQLite, format)
 
 importFrom(grDevices, replayPlot)
 
