@@ -1,6 +1,6 @@
 Package: keggorthology
 Title: graph support for KO, KEGG Orthology
-Version: 2.9.0
+Version: 2.9.1
 Author: VJ Carey <stvjc@channing.harvard.edu>
 Description: graphical representation of the Feb 2010 KEGG Orthology.
   The KEGG orthology is a set of pathway IDs that are not to be
@@ -11,4 +11,4 @@ Imports: AnnotationDbi,graph,DBI, graph, grDevices, methods,
 Suggests: RBGL,ALL
 Maintainer: VJ Carey <stvjc@channing.harvard.edu>
 License: Artistic-2.0
-biocViews: Pathways,GraphsAndNetworks
+biocViews: Pathways, GraphsAndNetworks, NetworkVisualization
