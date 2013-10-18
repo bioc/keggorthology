@@ -15,7 +15,7 @@ importFrom(methods, new, showClass, showMlist)
 
 importFrom(stats, as.ts, coef, dendrapply, deviance, end, formula,
            frequency, IQR, is.leaf, knots, na.omit, naprint, pf, pnorm,
-           print.anova, printCoefmat, pt, quantile, reformulate,
+           printCoefmat, pt, quantile, reformulate,
            residuals, start, symnum, terms, time, ts, tsp,
            write.ftable)
 
