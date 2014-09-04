@@ -1,6 +1,6 @@
 Package: keggorthology
 Title: graph support for KO, KEGG Orthology
-Version: 2.16.0
+Version: 2.16.1
 Author: VJ Carey <stvjc@channing.harvard.edu>
 Description: graphical representation of the Feb 2010 KEGG Orthology.
         The KEGG orthology is a set of pathway IDs that are not to be
