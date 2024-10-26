@@ -1,12 +1,12 @@
 Package: keggorthology
 Title: graph support for KO, KEGG Orthology
-Version: 2.57.0
+Version: 2.57.1
 Author: VJ Carey <stvjc@channing.harvard.edu>
 Description: graphical representation of the Feb 2010 KEGG Orthology.
         The KEGG orthology is a set of pathway IDs that are not to be
         confused with the KEGG ortholog IDs.
-Depends: R (>= 2.5.0),stats,graph,hgu95av2.db
-Imports: AnnotationDbi,graph,DBI, graph, grDevices, methods, stats,
+Depends: R (>= 2.5.0), hgu95av2.db
+Imports: AnnotationDbi,graph,DBI, grDevices, methods, 
         tools, utils
 Suggests: RBGL,ALL
 Maintainer: VJ Carey <stvjc@channing.harvard.edu>

@@ -9,7 +9,7 @@ importMethodsFrom(graph, acc, addEdge, edgeMatrix, nodeData,
 
 importFrom(grDevices, replayPlot)
 
-importFrom(methods, new, showClass, showMlist)
+importFrom(methods, new, showClass)
 
 importFrom(stats, as.ts, coef, dendrapply, deviance, end, formula,
            frequency, IQR, is.leaf, knots, na.omit, naprint, pf, pnorm,

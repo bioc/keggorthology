@@ -38,7 +38,7 @@ character vector, typically processed by \code{na.omit}
 
 \examples{
 getKOtags("insulin")
-es =  acc(KOgraph, "Endocrine System")
+es =  graph::acc(KOgraph, "Endocrine System")
 nm = names(es[[1]])
 nm
 esp = lapply(nm, getKOprobes)

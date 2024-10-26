@@ -46,8 +46,8 @@ serialized in the package data directory.  }
 data(keggOrthDF)
 keggOrthDF[1:5,]
 data(KOgraph)
-nodes(KOgraph)[1:4]
-nodeData(KOgraph,,"tag")[1:5]
-nodeData(KOgraph,,"depth")[1:5]
+graph::nodes(KOgraph)[1:4]
+graph::nodeData(KOgraph,,"tag")[1:5]
+graph::nodeData(KOgraph,,"depth")[1:5]
 }
 \keyword{ models }
